@@ -1,0 +1,36 @@
+{
+  "summary": {
+    "totalResources": 10,
+    "totalControls": 50,
+    "failedControls": 5,
+    "criticalSeverity": 1,
+    "highSeverity": 2,
+    "mediumSeverity": 2,
+    "lowSeverity": 0
+  },
+  "results": [
+    {
+      "controlID": "C0001",
+      "controlName": "HostPath mount",
+      "status": "failed",
+      "severity": "high",
+      "description": "HostPath volumes expose host filesystem to containers, which can be a security risk.",
+      "resourceID": "apps/v1/Deployment/my-app-deployment",
+      "resourceName": "my-app-deployment",
+      "resourceKind": "Deployment",
+      "details": "Pod 'my-app-pod' in namespace 'default' has a HostPath volume mounted."
+    },
+    {
+      "controlID": "C0002",
+      "controlName": "Privileged container",
+      "status": "passed",
+      "severity": "critical",
+      "description": "Containers should not run in privileged mode.",
+      "resourceID": "apps/v1/Deployment/another-app",
+      "resourceName": "another-app",
+      "resourceKind": "Deployment",
+      "details": "No privileged containers found."
+    }
+    // ... more findings
+  ]
+}
